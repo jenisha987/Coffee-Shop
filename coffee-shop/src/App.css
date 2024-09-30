@@ -60,7 +60,7 @@ nav {
 }
 
 .nav-links .active {
-    color: brown;
+    color: rgb(42, 165, 108);
 }
 
 .nav-right {
@@ -69,3 +69,50 @@ nav {
     gap: 30px;
 }
 
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    nav {
+    height: 90px;
+    }
+    .nav-container .logo {
+        font-size: 1.5rem;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        top: 90px;
+        right: 2rem;
+        position: fixed;
+        background: #894647;
+        border-radius: 3rem;
+    }
+    .nav-links a {
+        display: inline-block;
+        height: 4rem;
+        width: 20rem;
+        text-align: center;
+        color: white;
+        line-height: 4rem;
+    }
+    .nav-right {
+        gap: 20px;
+        font-size: 1.5rem;
+    }
+    .menu-button {
+        display: flex;
+        background: transparent;
+        border: none;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+    .navlinksShow {
+        display: flex;
+    }
+    .navlinksHide {
+        display: none;
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from "react-router-dom";
 import { navlinks } from '../Data/Data';
 import { SiCoffeescript } from "react-icons/si";
@@ -8,6 +8,9 @@ import { MdMenu } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
+
+  const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false)
+
   return (
     <nav>
       <div className="container nav-container">
@@ -15,7 +18,7 @@ const Navbar = () => {
           <SiCoffeescript />
           <p>Coffee Cove</p>
         </Link>
-        <ul className='nav-links'>
+        <ul className={`nav-links ${isNavlinksShowing ? 'navlinksShow' : 'navlinksHide'}`}>
           {
             navlinks.map(({name, path}, index) => {
               return (
@@ -30,8 +33,12 @@ const Navbar = () => {
         <div className="nav-right">
           <CiSearch />
           <PiShoppingCartThin />
-          <MdMenu />
-          <RxCross2 />
+          <button className='menu-button' onClick={() => {setIsNavlinksShowing(!isNavlinksShowing)}}>
+            {
+              !isNavlinksShowing ? <MdMenu /> : <RxCross2 />
+            }
+          </button>
+          
         </div>
       </div>
     </nav>
