@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    overflow-x: hidden;
+    overflow-x: hidden;   
 }
 
 body::-webkit-scrollbar {
@@ -15,7 +18,7 @@ body::-webkit-scrollbar {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     max-width: 1420px;
     display: flex;
@@ -67,10 +70,21 @@ nav {
     display: flex;
     align-items: center;
     gap: 30px;
+    font-size: 1.5rem;
 }
 
 .menu-button {
     display: none;
+}
+ 
+.button-login {
+    background: black;
+    color: white;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-radius: 3rem;
 }
 
 @media (max-width: 1024px) {
@@ -115,6 +129,9 @@ nav {
     .navlinksHide {
         display: none;
     }
+    .button-login {
+        display: none;
+    }
 }
 
 @media (max-width:600px) {
@@ -128,5 +145,8 @@ nav {
     .nav-right {
         gap: 15px;
         font-size: 1.5rem;
+    }
+    .button-login {
+        display: none;
     }
 }
