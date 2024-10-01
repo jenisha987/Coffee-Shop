@@ -18,9 +18,9 @@ body::-webkit-scrollbar {
 }
 
 .container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
-    max-width: 1420px;
+    /* max-width: 1420px; */
     display: flex;
 }
 
@@ -88,12 +88,49 @@ nav {
     border-radius: 3rem;
 }
 
+/* .home {
+    background: #C69D5F;
+} */
+
 .home-img {
-    width: 100%;
+    width: 80%;
     height: 700px;
+    margin: 0 auto;
+    /* object-fit: cover; */
+}
+
+.shop-btn {
+    border: none;
+    position: relative;
+    top: -155px;
+    left: 60%;
+    background: #C69D5F;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+
+.shop-button {
+    border: none;
+    position: absolute;
+    background: #C69D5F;
+    top: 70%;
+    left: 49.3%;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+.shop-button:hover {
+    background: #894647;
 }
 
 @media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
     nav {
     height: 90px;
     }
@@ -139,11 +176,42 @@ nav {
         display: none;
     }
     .home-img {
+        width: 90%;
+        margin: 0 auto;
         height: 500px;
+    }
+    .shop-btn {
+        border: none;
+        position: relative;
+        background: #C69D5F;
+        top: -110px;
+        left: 58%;
+        padding: 0.6rem 1rem 0.6rem 1rem;
+        color: white;
+        font-size: large;
+        cursor: pointer;
+    }
+    .shop-button {
+        border: none;
+        position: absolute;
+        background: #C69D5F;
+        top: 68%;
+        left: 48.9%;
+        padding: 0.6rem 1rem 0.6rem 1rem;
+        color: white;
+        font-size: large;
+        cursor: pointer;
+    }
+    .shop-button:hover {
+        background: #894647;
     }
 }
 
 @media (max-width:600px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
     .nav-container .logo {
         font-size: 1.1rem;
     }
@@ -159,6 +227,8 @@ nav {
         display: none;
     }
     .home-img {
-        height: 250px;
+        width: 90%;
+        margin: 0 auto;
+        height: 200px;
     }
 }
