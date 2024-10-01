@@ -231,4 +231,27 @@ nav {
         margin: 0 auto;
         height: 200px;
     }
+    .shop-btn {
+        border: none;
+        position: relative;
+        top: -55px;
+        left: 51%;
+        background: #C69D5F;
+        padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+        color: white;
+        font-size: large;
+        cursor: pointer;
+    }
+    
+    .shop-button {
+        border: none;
+        position: absolute;
+        background: #C69D5F;
+        top: 58%;
+        left: 47.2%;
+        padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+        color: white;
+        font-size: large;
+        cursor: pointer;
+    }
 }
