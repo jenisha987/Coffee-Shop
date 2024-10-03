@@ -18,7 +18,7 @@ body::-webkit-scrollbar {
 }
 
 .container {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     /* max-width: 1420px; */
     display: flex;
@@ -88,15 +88,14 @@ nav {
     border-radius: 3rem;
 }
 
-/* .home {
-    background: #C69D5F;
-} */
+.home {
+    width: 75%;
+    margin: 0 auto;
+}
 
 .home-img {
-    width: 80%;
+    width: 100%;
     height: 700px;
-    margin: 0 auto;
-    /* object-fit: cover; */
 }
 
 .shop-btn {
@@ -124,6 +123,10 @@ nav {
 }
 .shop-button:hover {
     background: #894647;
+}
+
+.home-image {
+    float: right;
 }
 
 @media (max-width: 1024px) {
@@ -175,9 +178,12 @@ nav {
     .button-login {
         display: none;
     }
-    .home-img {
+    .home {
         width: 90%;
         margin: 0 auto;
+    }
+    .home-img {
+        width: 100%;
         height: 500px;
     }
     .shop-btn {
@@ -226,9 +232,12 @@ nav {
     .button-login {
         display: none;
     }
-    .home-img {
+    .home {
         width: 90%;
         margin: 0 auto;
+    }
+    .home-img {
+        width: 100%;
         height: 200px;
     }
     .shop-btn {

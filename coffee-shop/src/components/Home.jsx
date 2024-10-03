@@ -1,6 +1,7 @@
 import React from 'react';
 import home from "../assets/images/Home.png";
 import home1 from "../assets/images/Home1.png";
+import home2 from "../assets/images/home2.webp";
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
@@ -28,6 +29,10 @@ export const Home = () => {
         <button className='shop-button'>Shop Now</button>
       </div>
     </Slider>
+
+    <div className=''>
+      <img src={home2} alt="home2" className='home-image' />
+    </div>
     </div>
   )
 }
