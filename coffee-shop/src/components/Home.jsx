@@ -8,6 +8,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Products from './Products';
 
 export const Home = () => {
   const settings = {
@@ -70,7 +71,7 @@ export const Home = () => {
         </div>
       </div>
     </div>
-
+    <Products />
     </div>
   )
 }

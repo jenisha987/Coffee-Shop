@@ -185,6 +185,17 @@ nav {
 .home-sectionn {
     margin-left: 6rem;
 }
+.home-product-p {
+    text-align: center;
+}
+.home-product-tag{
+    margin-top: 8rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.home-product-tagline {
+    text-transform: capitalize;
+}
 
 @media (max-width: 1024px) {
     .container {
