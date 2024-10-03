@@ -2,6 +2,7 @@ import React from 'react';
 import home from "../assets/images/Home.png";
 import home1 from "../assets/images/Home1.png";
 import home2 from "../assets/images/home2.webp";
+import home3 from "../assets/images/home3.webp";
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
@@ -41,18 +42,35 @@ export const Home = () => {
         <div class="image-wrapper">
           <img src={home2} alt="Coffee setup" className='home-image' />
         </div>
-
-        {/* <div className='web-home'>
-          <p className='section-p'>coffee solves everything</p>
-          <p className='section-p-p'>Experience coffee as it should be—fresh, bold, and always satisfying</p>
-          <button className="section-button">shop now</button>
-        </div>
-        <div className="web-img">
-
-        </div> */}
-        </div>
-
+      </div>
     </div>
+    <div className='home-section1'>
+      <div class="container-section">
+        <div class="background-bottom"></div>
+        <div class="image-wrapper">
+          <img src={home3} alt="Coffee setup" className='home-image' />
+        </div>
+      </div>
+      <div className='home-sectionn'>
+      <p className='section-p'>feel good with coffee</p>
+      <p className='section-p-p'>Start your day with a perfectly brewed cup of joy at coffee cove</p>
+      <button className="section-button">shop now</button>
+      </div>
+    </div>
+    <div className='home-section2'>
+      <div>
+      <p className='section-p'>feel good with coffee</p>
+      <p className='section-p-p'>Start your day with a perfectly brewed cup of joy at coffee cove</p>
+      <button className="section-button">shop now</button>
+      </div>
+      <div class="container-section">
+        <div class="background-bottom"></div>
+        <div class="image-wrapper">
+          <img src={home3} alt="Coffee setup" className='home-image' />
+        </div>
+      </div>
+    </div>
+
     </div>
   )
 }

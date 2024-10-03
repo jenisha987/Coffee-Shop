@@ -176,6 +176,15 @@ nav {
     background-color: #E7EFF4; 
     z-index: 0; /* Keep background behind the image */
 }
+.home-section1 {
+    display: flex;
+}
+.home-section2 {
+    display: none;
+}
+.home-sectionn {
+    margin-left: 6rem;
+}
 
 @media (max-width: 1024px) {
     .container {
@@ -269,6 +278,12 @@ nav {
     }
     .home-image {
         max-width: 80%;
+    }
+    .home-section2 {
+        display: block;
+    }
+    .home-section1 {
+        display: none;
     }
       
 }
