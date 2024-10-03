@@ -124,10 +124,59 @@ nav {
 .shop-button:hover {
     background: #894647;
 }
-
-/* .home-image {
-    float: right;
-} */
+.home-section {
+    /* margin-top: 4rem; */
+    display: flex;
+}
+.section-p {
+    font-size: 4rem;
+    margin-top: 12rem;
+    width: 80%;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.section-p-p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 3.5;
+}
+.section-button {
+    border: none;
+    background: #C69D5F;
+    padding: 0.8rem 2rem 0.8rem 2rem;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.section-button:hover {
+    background: white;
+    color: #C69D5F;
+    border: 2px solid #C69D5F;
+}
+.container-section {
+    display: flex;
+    position: relative;
+}
+.image-wrapper {
+    position: relative;
+}
+.home-image {
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+/* Background color only at the bottom */
+.background-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px; 
+    background-color: #E7EFF4; 
+    z-index: 0; /* Keep background behind the image */
+}
 
 @media (max-width: 1024px) {
     .container {
@@ -213,6 +262,7 @@ nav {
     }
     .home-section {
         margin-top: 4rem;
+        display: block;
     }
     .section-p {
         font-size: 2rem;

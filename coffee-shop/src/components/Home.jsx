@@ -31,19 +31,26 @@ export const Home = () => {
     </Slider>
 
     <div className='home-section'>
+      <div>
       <p className='section-p'>coffee solves everything</p>
       <p className='section-p-p'>Experience coffee as it should be—fresh, bold, and always satisfying</p>
       <button className="section-button">shop now</button>
-      {/* <div className='image-section'>
-        <img src={home2} alt="home2" className='home-image' />
-        <div className="background-bottom"></div>
-      </div> */}
+      </div>
       <div class="container-section">
         <div class="background-bottom"></div>
         <div class="image-wrapper">
           <img src={home2} alt="Coffee setup" className='home-image' />
         </div>
-      </div>
+
+        {/* <div className='web-home'>
+          <p className='section-p'>coffee solves everything</p>
+          <p className='section-p-p'>Experience coffee as it should be—fresh, bold, and always satisfying</p>
+          <button className="section-button">shop now</button>
+        </div>
+        <div className="web-img">
+
+        </div> */}
+        </div>
 
     </div>
     </div>
