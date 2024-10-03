@@ -323,4 +323,20 @@ nav {
         font-size: large;
         cursor: pointer;
     }
+    .section-p {
+        margin-top: 5rem;
+        font-size: 1.8rem;
+    }
+    .section-p-p {
+        font-size: 1rem;
+        margin-top: 1rem;
+        line-height: 1.8;
+    }
+    .section-button {
+        margin-top: 1.4rem;
+        padding: 0.8rem 1.8rem 0.8rem 1.8rem;
+    }
+    .background-bottom {
+        height: 80px; 
+    }
 }
