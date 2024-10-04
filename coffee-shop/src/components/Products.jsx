@@ -10,17 +10,15 @@ const Products = () => {
             <p className='home-product-tagline'>best seller product this week!</p>
         </div>
         <div className='home-product-list'>
-          <div>
             {
               products_list.map(product_list => (
-                <div key={product_list.id}>
+                <div key={product_list.id} className='product-item'>
                   <img src={product_list.image} alt='product' className='home-product-img' />
                   <p>{product_list.title}</p>
                   <p>Rs.{product_list.price}</p>
                 </div>
               ))
             }
-          </div>
         </div>
     </div>
   )

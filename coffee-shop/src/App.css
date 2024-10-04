@@ -185,6 +185,9 @@ nav {
 .home-sectionn {
     margin-left: 6rem;
 }
+.home-product {
+    width: 100%;
+}
 .home-product-p {
     text-align: center;
 }
@@ -197,13 +200,17 @@ nav {
     text-transform: capitalize;
 }
 .home-product-list {
+    margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.product-item {
+    margin-bottom: -50px;
 }
 .home-product-img {
-    width: 80%;
-    height: 80%;
+    width: 95%;
+    height: 70%;
 }
 
 @media (max-width: 1024px) {
