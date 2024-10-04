@@ -56,6 +56,19 @@ const Blog = () => {
                 ))
             }
         </div>
+
+        <div className='home-blog-list-mob'>
+            {
+                displayedBlogs.map(blog => (
+                    <div key={blog.id} className='blog-item'>
+                        <img src={blog.img} alt="blog" className='home-blog-img' />
+                        <p className='home-blog-tag'>news</p>
+                        <p className='home-blog-title'>{blog.title}</p>
+                        <p className='home-blog-desc'>{blog.desc.length > 100 ? blog.desc.slice(0, 80) + '...' : blog.desc}</p>
+                    </div>
+                ))
+            }
+        </div>
     </div>
   )
 }

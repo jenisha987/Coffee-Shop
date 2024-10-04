@@ -560,4 +560,24 @@ nav {
         margin-left: -10rem;
         height: 20%;
     }
+    .home-blog-list-resp {
+        display: none;
+    }
+    .home-blog-p {
+        margin-top: 4rem;
+    }
+    .home-blog-list-mob {
+        max-width: 100%;
+        margin-top: 1.5rem;
+    }
+    .blog-item {
+        margin-bottom: 2rem;
+    }
+    .home-blog-img {
+        width: 101%;
+        height: 80%;
+    }
+    .home-blog-tag {
+        margin-top: 0.5rem;
+    }
 }
