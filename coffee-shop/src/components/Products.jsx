@@ -1,10 +1,25 @@
-import React from 'react';
-import product from "../assets/images/home3.jpg";
+import React, { useEffect, useState } from 'react';
 import { products_list } from '../Data/Products';
 
 const Products = () => {
 
-  const displayedProducts = products_list.slice(0, 8);
+  const [ randomProducts, setRandomProducts ] = useState([]);
+
+  const shuffleArray = (array) => {
+    for (let i = array.length -1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  useEffect(() => {
+    const shuffledProducts = shuffleArray([...products_list]);
+    const selectedProducts = shuffledProducts.slice(0, 8);
+    setRandomProducts(selectedProducts);
+  }, []);
+
+  // const displayedProducts = products_list.slice(0, 8);
 
   return (
     <div className='home-product'>
@@ -14,7 +29,7 @@ const Products = () => {
         </div>
         <div className='home-product-list'>
             {
-              displayedProducts.map(product_list => (
+              randomProducts.map(product_list => (
                 <div key={product_list.id} className='product-item'>
                   <img src={product_list.image} alt='product' className='home-product-img' />
                   <p>{product_list.title}</p>
