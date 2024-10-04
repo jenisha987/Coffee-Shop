@@ -272,9 +272,25 @@ nav {
     width: 95%;
     height: 80%;
 }
-/* .home-blog-list-resp {
+.home-blog-list-resp {
     display: none;
-} */
+}
+.home-blog-tag {
+    margin-top: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: gray;
+    font-weight: 500;
+}
+.home-blog-title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    line-height: 2;
+}
+.home-blog-desc {
+    color: gray;
+}
 
 @media (max-width: 1024px) {
     .container {

@@ -28,38 +28,30 @@ const Blog = () => {
 
     const displayedBlogs = blogs.slice(0,2);
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-      };
-
   return (
     <div className='home-blog'>
         <p className='home-blog-p'>our blogs</p>
         <div className='home-blog-list'>
             {
                 blogs.map(blog => (
-                    <div id={blog.id} className='blog-item'>
+                    <div key={blog.id} className='blog-item'>
                         <img src={blog.img} alt="blog" className='home-blog-img' />
-                        <p>news</p>
-                        <p>{blog.title}</p>
-                        <p>{blog.desc.length > 100 ? blog.desc.slice(0, 80) + '...' : blog.desc}</p>
+                        <p className='home-blog-tag'>news</p>
+                        <p className='home-blog-title'>{blog.title}</p>
+                        <p className='home-blog-desc'>{blog.desc.length > 100 ? blog.desc.slice(0, 80) + '...' : blog.desc}</p>
                     </div>
                 ))
             }
         </div>
+        
         <div className='home-blog-list-resp'>
             {
                 displayedBlogs.map(blog => (
-                    <div id={blog.id} className='blog-item'>
+                    <div key={blog.id} className='blog-item'>
                         <img src={blog.img} alt="blog" className='home-blog-img' />
-                        <p>news</p>
-                        <p>{blog.title}</p>
-                        <p>{blog.desc.length > 100 ? blog.desc.slice(0, 80) + '...' : blog.desc}</p>
+                        <p className='home-blog-tag'>news</p>
+                        <p className='home-blog-title'>{blog.title}</p>
+                        <p className='home-blog-desc'>{blog.desc.length > 100 ? blog.desc.slice(0, 80) + '...' : blog.desc}</p>
                     </div>
                 ))
             }
