@@ -196,6 +196,15 @@ nav {
 .home-product-tagline {
     text-transform: capitalize;
 }
+.home-product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.home-product-img {
+    width: 80%;
+    height: 80%;
+}
 
 @media (max-width: 1024px) {
     .container {
