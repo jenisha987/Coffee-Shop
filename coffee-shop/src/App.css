@@ -275,6 +275,9 @@ nav {
 .home-blog-list-resp {
     display: none;
 }
+.home-blog-list-mob {
+    display: none;
+}
 .home-blog-tag {
     margin-top: 1rem;
     text-align: center;
@@ -290,6 +293,35 @@ nav {
 }
 .home-blog-desc {
     color: gray;
+}
+footer {
+    margin-top: 12rem;
+    background: #F9F9F9;
+    height: 40vh;
+}
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 250px;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.footer-section1 {
+    width: 150%;
+}
+.footer-section1-logo {
+    display: flex;
+    gap: 6px;
+}
+.footer-logo {
+    margin-top: 0.5rem;
+}
+.footer-header {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 1024px) {
