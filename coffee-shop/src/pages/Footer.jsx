@@ -1,5 +1,9 @@
 import React from 'react';
 import { SiCoffeescript } from "react-icons/si";
+import { CiFacebook } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
+import { CiTwitter } from "react-icons/ci";
 
 const Footer = () => {
   return (
@@ -12,9 +16,15 @@ const Footer = () => {
             <p className='footer-header'>coffee cove</p>
           </div>
           <p>Subscribe our newsletter and get discount 30% off</p>
+          <ul className='social-icons'>
+            <li><CiFacebook  size={25} /></li>
+            <li><FaInstagram  size={25} /></li>
+            <li><CiMail  size={25} /></li>
+            <li><CiTwitter  size={25} /></li>
+          </ul>
         </div>
-        <div>
-          <p>customer care</p>
+        <div className='footer-section'>
+          <p className='footer-head'>customer care</p>
           <ul>
             <li>about us</li>
             <li>privacy policy</li>
@@ -23,8 +33,8 @@ const Footer = () => {
             <li>wholesale privacy</li>
           </ul>
         </div>
-        <div>
-          <p>quick shop</p>
+        <div className='footer-section'>
+          <p className='footer-head'>quick shop</p>
           <ul>
             <li>pagination</li>
             <li>terms & conditions</li>
@@ -33,8 +43,8 @@ const Footer = () => {
             <li>home page</li>
           </ul>
         </div>
-        <div>
-          <p>company</p>
+        <div className='footer-section'>
+          <p className='footer-head'>company</p>
           <ul>
             <li>menu items</li>
             <li>help center</li>
@@ -43,6 +53,10 @@ const Footer = () => {
             <li>home page</li>
           </ul>
         </div>
+      </div>
+      <div className='footer-last'>
+        <hr className='footer-h' />
+        <p>© Jenisha Shrestha | 2024</p>
       </div>
     </footer>
   )

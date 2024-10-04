@@ -302,13 +302,13 @@ footer {
 .footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 250px;
+    gap: 200px;
     width: 75%;
     margin: 0 auto;
     margin-top: 2rem;
 }
 .footer-section1 {
-    width: 150%;
+    width: 270px;
 }
 .footer-section1-logo {
     display: flex;
@@ -322,6 +322,34 @@ footer {
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 1rem;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1rem;
+}
+.footer-section {
+    text-transform: capitalize;
+    width: 200px;
+}
+.footer-head {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+li {
+    line-height: 2.5;
+}
+.footer-last {
+    margin-top: 1rem;
+    text-align: center;
+}
+.footer-h {
+    width: 75%;
+    margin: 0 auto;
+}
+.footer-last p {
+    margin-top: 0.6rem;
 }
 
 @media (max-width: 1024px) {
