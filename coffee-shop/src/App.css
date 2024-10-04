@@ -477,4 +477,33 @@ nav {
     .home-product-img {
         width: 100%;
     }
+    .home-tag {
+        height: 300px;
+    }
+    .home-tag-section {
+        margin-left: 1rem;
+    }
+    .home-tag-p {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        width: 100%;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+    .home-tag-p-p {
+        font-size: 1rem;
+        margin-top: 1.2rem;
+        line-height: 2;
+    }
+    .home-tag-button {
+        margin-top: 1.5rem;
+        padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    }
+    .home-tag-img {
+        position: absolute;
+        width: 40%;
+        margin-top: 7.5rem;
+        margin-left: -10rem;
+        height: 20%;
+    }
 }
