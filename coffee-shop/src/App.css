@@ -357,6 +357,17 @@ li {
 .footer-sections {
     display: none;
 }
+.cart-count {
+    position: absolute;
+    background: #C69D5F;
+    border-radius: 50%;
+    height: 27px;
+    width: 27px;
+    left: 80%;
+    top: 15%;
+    font-size: 1.2rem;
+    text-align: center;
+}
 
 @media (max-width: 1024px) {
     .container {
@@ -574,6 +585,13 @@ li {
     .footer-h {
         width: 90%;
         margin: 0 auto;
+    }
+    .cart-count {
+        height: 23px;
+        width: 23px;
+        left: 89%;
+        top: 14%;
+        font-size: 1rem;
     }
       
 }

@@ -33,6 +33,7 @@ const Navbar = () => {
         <div className="nav-right">
           <CiSearch />
           <PiShoppingCartThin />
+          <div className='cart-count'>0</div>
           <button className='menu-button' onClick={() => {setIsNavlinksShowing(!isNavlinksShowing)}}>
             {
               !isNavlinksShowing ? <MdMenu /> : <RxCross2 />
