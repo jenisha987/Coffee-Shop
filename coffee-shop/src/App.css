@@ -737,7 +737,7 @@ li {
     }
     footer {
         margin-top: 6rem;
-        height: 130vh;
+        height: 128vh;
     }
     .footer {
         margin-top: 1.5rem;
@@ -767,5 +767,12 @@ li {
     }
     .footer-last {
         font-size: 0.7rem;
+    }
+    .cart-count {
+        height: 23px;
+        width: 23px;
+        left: 80%;
+        top: 14%;
+        font-size: 1rem;
     }
 }
