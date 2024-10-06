@@ -73,7 +73,7 @@ export const Home = ({addToCart, cart}) => {
         </div>
       </div>
     </div>
-    <Cart cart={cart} />
+    {/* <Cart cart={cart} /> */}
     <Products addToCart={addToCart} />
     <Blog />
     </div>

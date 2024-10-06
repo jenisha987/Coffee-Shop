@@ -10,11 +10,11 @@ import { RxCross2 } from "react-icons/rx";
 const Navbar = ({ count }) => {
 
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false)
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleCartClick = () => {
-  //   navigate('/cart');
-  // }
+  const handleCartClick = () => {
+    navigate('/cart');
+  }
 
   return (
     <nav>
@@ -37,7 +37,7 @@ const Navbar = ({ count }) => {
 
         <div className="nav-right">
           <CiSearch />
-          <PiShoppingCartThin />
+          <PiShoppingCartThin onClick={handleCartClick} />
           <div className="cart-count">{count}</div> 
           <button className='menu-button' onClick={() => {setIsNavlinksShowing(!isNavlinksShowing)}}>
             {
