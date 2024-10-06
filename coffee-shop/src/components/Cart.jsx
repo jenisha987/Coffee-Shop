@@ -38,7 +38,7 @@ const Cart = ({ cart }) => {
 
       <p>Total Amount: <span></span>
       {
-        cart.map(item => item.price + item.quantity).reduce((total, value) => total + value, 0)
+        carts.map(item => item.price * item.quantity).reduce((total, value) => total + value, 0)
       }
       </p>
     </div>
