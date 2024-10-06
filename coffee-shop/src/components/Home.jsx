@@ -10,8 +10,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Products from './Products';
 import Blog from './Blog';
+import Cart from './Cart';
 
-export const Home = () => {
+export const Home = ({addToCart, cart}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -72,7 +73,8 @@ export const Home = () => {
         </div>
       </div>
     </div>
-    <Products />
+    <Cart cart={cart} />
+    <Products addToCart={addToCart} />
     <Blog />
     </div>
   )
