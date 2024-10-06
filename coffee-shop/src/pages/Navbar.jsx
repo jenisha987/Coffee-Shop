@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navlinks } from '../Data/Data';
 import { SiCoffeescript } from "react-icons/si";
 import { CiSearch } from "react-icons/ci";
@@ -7,9 +7,14 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import { MdMenu } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
 
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false)
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate('/cart');
+  }
 
   return (
     <nav>
@@ -32,8 +37,10 @@ const Navbar = () => {
 
         <div className="nav-right">
           <CiSearch />
-          <PiShoppingCartThin />
-          <div className='cart-count'>0</div>
+          <div className="cart-icon" onClick={handleCartClick}>
+            <PiShoppingCartThin />
+            <div className="cart-count">{cart.length}</div> {/* Display number of items */}
+          </div>
           <button className='menu-button' onClick={() => {setIsNavlinksShowing(!isNavlinksShowing)}}>
             {
               !isNavlinksShowing ? <MdMenu /> : <RxCross2 />

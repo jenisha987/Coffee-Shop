@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { products_list } from '../Data/Products';
 import coffee_cup from "../assets/images/coffee-cup.png";
 
-const Products = () => {
+const Products = ({ addToCart }) => {
 
   const [ randomProducts, setRandomProducts ] = useState([]);
 
+  // Shuffle function to randomize products
   const shuffleArray = (array) => {
     for (let i = array.length -1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -14,6 +15,7 @@ const Products = () => {
     return array;
   }
 
+  // useEffect to shuffle products and select 8 random products on mount
   useEffect(() => {
     const shuffledProducts = shuffleArray([...products_list]);
     const selectedProducts = shuffledProducts.slice(0, 8);
@@ -21,6 +23,7 @@ const Products = () => {
   }, []);
 
   // const displayedProducts = products_list.slice(0, 8);
+
 
   return (
     <div className='home-product'>
@@ -30,11 +33,13 @@ const Products = () => {
       </div>
       <div className='home-product-list'>
           {
-            randomProducts.map(product_list => (
-              <div key={product_list.id} className='product-item'>
-                <img src={product_list.image} alt='product' className='home-product-img' />
-                <p>{product_list.title}</p>
-                <p>Rs.{product_list.price}</p>
+            randomProducts.map(product => (
+              <div key={product.id} className='product-item'>
+                <img src={product.image} alt='product' className='home-product-img' />
+                <p>{product.title}</p>
+                <p>Rs.{product.price}
+                  <button className='cart-button' onClick={addToCart(product)}>Add to Cart</button>
+                </p>
               </div>
             ))
           }
