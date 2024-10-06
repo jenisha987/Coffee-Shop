@@ -7,14 +7,14 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import { MdMenu } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 
-const Navbar = ({ cart }) => {
+const Navbar = () => {
 
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false)
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleCartClick = () => {
-    navigate('/cart');
-  }
+  // const handleCartClick = () => {
+  //   navigate('/cart');
+  // }
 
   return (
     <nav>
@@ -37,10 +37,8 @@ const Navbar = ({ cart }) => {
 
         <div className="nav-right">
           <CiSearch />
-          <div className="cart-icon" onClick={handleCartClick}>
-            <PiShoppingCartThin />
-            <div className="cart-count">{cart.length}</div> {/* Display number of items */}
-          </div>
+          <PiShoppingCartThin />
+          <div className="cart-count">0</div> 
           <button className='menu-button' onClick={() => {setIsNavlinksShowing(!isNavlinksShowing)}}>
             {
               !isNavlinksShowing ? <MdMenu /> : <RxCross2 />

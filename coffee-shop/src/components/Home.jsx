@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Products from './Products';
 import Blog from './Blog';
 
-export const Home = ({ addToCart }) => {
+export const Home = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -39,17 +39,17 @@ export const Home = ({ addToCart }) => {
       <p className='section-p-p'>Experience coffee as it should be—fresh, bold, and always satisfying</p>
       <button className="section-button">shop now</button>
       </div>
-      <div class="container-section">
-        <div class="background-bottom"></div>
-        <div class="image-wrapper">
+      <div className="container-section">
+        <div className="background-bottom"></div>
+        <div className="image-wrapper">
           <img src={home2} alt="Coffee setup" className='home-image' />
         </div>
       </div>
     </div>
     <div className='home-section1'>
-      <div class="container-section">
-        <div class="background-bottom"></div>
-        <div class="image-wrapper">
+      <div className="container-section">
+        <div className="background-bottom"></div>
+        <div className="image-wrapper">
           <img src={home3} alt="Coffee setup" className='home-image' />
         </div>
       </div>
@@ -65,14 +65,14 @@ export const Home = ({ addToCart }) => {
       <p className='section-p-p'>Start your day with a perfectly brewed cup of joy at coffee cove</p>
       <button className="section-button">shop now</button>
       </div>
-      <div class="container-section">
-        <div class="background-bottom"></div>
-        <div class="image-wrapper">
+      <div className="container-section">
+        <div className="background-bottom"></div>
+        <div className="image-wrapper">
           <img src={home3} alt="Coffee setup" className='home-image' />
         </div>
       </div>
     </div>
-    <Products addToCart={addToCart} />
+    <Products />
     <Blog />
     </div>
   )

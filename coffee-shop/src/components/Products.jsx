@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { products_list } from '../Data/Products';
 import coffee_cup from "../assets/images/coffee-cup.png";
 
-const Products = ({ addToCart }) => {
+const Products = () => {
 
   const [ randomProducts, setRandomProducts ] = useState([]);
 
@@ -38,7 +38,7 @@ const Products = ({ addToCart }) => {
                 <img src={product.image} alt='product' className='home-product-img' />
                 <p>{product.title}</p>
                 <p>Rs.{product.price}
-                  <button className='cart-button' onClick={addToCart(product)}>Add to Cart</button>
+                  <button className='cart-button'>Add to Cart</button>
                 </p>
               </div>
             ))

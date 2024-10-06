@@ -8,24 +8,13 @@ import Error from './pages/Error';
 import Cart from './components/Cart';
 
 const App = () => {
-
-  const [ cart, setCart ] = useState([]);
-
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  }
-
-  const removeFromCart = (product) => {
-    setCart(cart.filter((item) => item.id !== product.id));
-  };
-
   return (
     <BrowserRouter>
     <Navbar />
     <Routes>
-      <Route path='/' element={<Home addToCart={addToCart} />} />
+      <Route path='/' element={<Home />} />
       <Route path='*' element={<Error />} />
-      <Route path='/cart' element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+      <Route path='/cart' element={<Cart />} />
     </Routes>
     <Footer />
     </BrowserRouter>
