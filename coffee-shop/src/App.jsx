@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, json, Route, Routes } from 'react-router-dom';
 import { Home } from './components/Home';
 import Navbar from './pages/Navbar';
 import Footer from './pages/Footer';
@@ -9,7 +9,16 @@ import Cart from './components/Cart';
 
 const App = () => {
 
-  const [ cart, setCart ] = useState([]);
+  const LOCAL_STORAGE_KEY = "cart";
+
+  const [ cart, setCart ] = useState(() => {
+    const storedCart = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (data) => {
     setCart((prevCart) => {
