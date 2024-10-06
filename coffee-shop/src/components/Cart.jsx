@@ -13,10 +13,15 @@ const Cart = ({ cart }) => {
                     <button>-</button>
                     <p>{cartItem.quantity}</p>
                     <button>+</button>
-                    <p>{cartItem.price}</p>
+                    <p>Rs.{cartItem.price}</p>
                 </div>
             )
         })
+      }
+
+      <p>Total Amount:</p>
+      {
+        cart.map(item => item.price).reduce((total, value) => total + value, 0)
       }
     </div>
   );
