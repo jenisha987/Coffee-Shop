@@ -12,17 +12,29 @@ const App = () => {
   const [ cart, setCart ] = useState([]);
 
   const addToCart = (data) => {
-    console.log(data)
-    setCart([ ...cart, {...data, quantity: 1}])
-  }
+    setCart((prevCart) => {
+      const existingItemIndex = prevCart.findIndex(item => item.id === data.id);
+      if (existingItemIndex !== -1) {
+        return prevCart.map((item, index) => {
+          return index === existingItemIndex
+            ? { ...item, quantity: item.quantity + 1 }
+            : item;
+        });
+      } else {
+        return [ ...prevCart, {...data, quantity: 1}]
+      }
+    });
+  };
+
+  const totalItemsInCart = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <BrowserRouter>
-    <Navbar count={cart.length} />
+    <Navbar count={totalItemsInCart} />
     <Routes>
       <Route path='/' element={<Home addToCart={addToCart} cart={cart} />} />
       <Route path='*' element={<Error />} />
-      <Route path='/cart' element={<Cart cart={cart} />} />
+      <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
     </Routes>
     <Footer />
     </BrowserRouter>

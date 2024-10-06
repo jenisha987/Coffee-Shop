@@ -12,7 +12,7 @@ import Products from './Products';
 import Blog from './Blog';
 import Cart from './Cart';
 
-export const Home = ({addToCart, cart}) => {
+export const Home = ({ addToCart }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -73,7 +73,6 @@ export const Home = ({addToCart, cart}) => {
         </div>
       </div>
     </div>
-    {/* <Cart cart={cart} /> */}
     <Products addToCart={addToCart} />
     <Blog />
     </div>
