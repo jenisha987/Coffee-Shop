@@ -70,6 +70,35 @@ const Cart = ({ cart, setCart }) => {
             </tbody>
         </table>
 
+      <div className='cart-mobile'>
+          {
+            carts.length > 0 ? carts.map((cartItem, cartIndex) => (
+              <table key={cartIndex}>
+                <tr>
+                  <td>{cartItem.title}</td>
+                  <td><img src={cartItem.image} alt='cartItem' width={100} height={100} /></td>
+                </tr>
+                <tr>
+                  <td>product price</td>
+                  <td>Rs.{cartItem.price}</td>
+                </tr>
+                <tr>
+                  <td>quantity</td>
+                  <td>
+                    <button onClick={() => handleIncrement(cartIndex)}><FaCaretUp size={20} /></button>
+                    <p>{cartItem.quantity}</p>
+                    <button onClick={() => handleDecrement(cartIndex)}><FaCaretDown size={20} /></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>sub total</td>
+                  <td>Rs.{cartItem.price * cartItem.quantity}</td>
+                </tr>
+              </table>
+            )) : <h3>Your cart is empty</h3>
+          }
+      </div>
+
       <p>Items: <span>{carts.reduce((total, item) => total + item.quantity, 0)}</span></p>
       <p>Total Amount: <span>{carts.reduce((total, item) => total + (item.price * item.quantity), 0)}</span></p>
     </div>
@@ -79,29 +108,3 @@ const Cart = ({ cart, setCart }) => {
 
 export default Cart;
 
-
-{/* {
-  carts.length > 0 ? 
-      carts?.map((cartItem, cartIndex) => {
-          return (
-              <div key={cartIndex}>
-                  <img src={cartItem.image} alt='cartItem' width={200} />
-                  <p>{cartItem.title}</p>
-                  <button onClick={() => {
-                      const _carts = carts.map((item, index) => {
-                          return cartIndex === index ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 } : item
-                      })
-                      setCarts(_carts)
-                  }}>-</button>
-                  <p>{cartItem.quantity}</p>
-                  <button onClick={() => {
-                      const _carts = carts.map((item, index) => {
-                          return cartIndex === index ? { ...item, quantity: item.quantity + 1 } : item
-                      })
-                      setCarts(_carts)
-                  }}>+</button>
-                  <p>Rs.{cartItem.price * cartItem.quantity}</p>
-              </div>
-          )
-      }) : <h3>You cart is empty</h3>
-} */}

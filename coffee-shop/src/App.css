@@ -449,6 +449,9 @@ td {
     padding: 0.1rem 0.8rem 0.1rem 0.8rem;
     background: none;
 } 
+.cart-mobile {
+    display: none;
+}
 
 @media (max-width: 1024px) {
     .container {
@@ -863,4 +866,81 @@ td {
         top: 14%;
         font-size: 1rem;
     }
+
+    .cart-item-section {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+    .cart-table {
+        display: none;
+    }
+    /* .cart-mobile {
+        display: block;
+        border: 1px solid rgb(229, 225, 225);
+    }
+    table {
+        width: 100%;
+        border: none;
+    }
+    .table-quantity button {
+        border: 1px solid rgb(210, 209, 209);
+        padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+        background: none;
+    }  */
+
+    .cart-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .cart-mobile table {
+        border: 1px solid rgb(229, 225, 225); 
+        padding: 10px;
+        width: 100%;
+    }  
+    .cart-mobile td {
+        padding: 10px 5px;
+        border: none;
+        text-transform: capitalize;
+    }
+    .cart-mobile img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover; /* Ensures the image fits nicely */
+    }
+    .cart-mobile tr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cart-mobile table tr:first-child td:first-child {
+        color: black;
+    }
+    .cart-mobile tr td:first-child {
+        width: 100%;
+        color: #666;
+    }
+    .cart-mobile td button {
+        background: none;
+        border: 1px solid rgb(229, 225, 225);
+        padding: 0rem 0.2rem 0rem 0.2rem;
+        cursor: pointer;
+    }
+    .cart-mobile p {
+        margin-left: 0.5rem;
+        font-size: 1.1rem;
+    }
+    .cart-mobile h3 {
+        text-align: center;
+        font-size: 1.5rem;
+        color: #999;
+    }
+      
+      /* Additional adjustments for price and subtotal */
+      .cart-mobile .price, .cart-mobile .subtotal {
+        font-size: 1rem;
+        color: #666;
+      }
+      
+    
 }
