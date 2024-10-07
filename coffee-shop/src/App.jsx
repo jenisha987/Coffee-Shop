@@ -35,6 +35,12 @@ const App = () => {
     });
   };
 
+  const removeFromCart = (id) => {
+    setCart((prevCart) => {
+      return prevCart.filter(item => item.id !== id);
+    })
+  }
+
   const totalItemsInCart = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
@@ -43,7 +49,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home addToCart={addToCart} cart={cart} />} />
       <Route path='*' element={<Error />} />
-      <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
+      <Route path='/cart' element={<Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} />} />
     </Routes>
     <Footer />
     </BrowserRouter>

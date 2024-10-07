@@ -5,7 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 
-const Cart = ({ cart, setCart }) => {
+const Cart = ({ cart, setCart, removeFromCart }) => {
   const [carts, setCarts] = useState([]);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Cart = ({ cart, setCart }) => {
             </thead>
             <tbody>
                 {
-                carts.length > 0 ? 
+                carts.length > 0 ? (
                 carts.map((cartItem, cartIndex) => (
                     <tr key={cartIndex} className='table-tr'>
                       <td className='table-product'>
@@ -63,17 +63,24 @@ const Cart = ({ cart, setCart }) => {
                           <button onClick={() => handleDecrement(cartIndex)}><FaCaretDown size={20} /></button>
                       </td>
                       <td>Rs.{cartItem.price * cartItem.quantity}</td>
-                      <td><RxCross2 size={25} /></td>
+                      <td><RxCross2 size={25} onClick={() => removeFromCart(cartItem.id)} /></td>
                     </tr>
-                    )) : <h3>Your cart is empty</h3>
+                    )) 
+                  ) : (
+                    <div>
+                      <h3>Your cart is empty</h3>
+                    </div>
+                    )
                 }
             </tbody>
         </table>
 
       <div className='cart-mobile'>
           {
-            carts.length > 0 ? carts.map((cartItem, cartIndex) => (
+            carts.length > 0 ? ( carts.map((cartItem, cartIndex) => (
               <table key={cartIndex}>
+                <tbody>
+                <tr className='delete-cart-item'><RxCross2 size={20} onClick={() => removeFromCart(cartItem.id)} /></tr>
                 <tr>
                   <td>{cartItem.title}</td>
                   <td><img src={cartItem.image} alt='cartItem' width={100} height={100} /></td>
@@ -94,8 +101,14 @@ const Cart = ({ cart, setCart }) => {
                   <td>sub total</td>
                   <td>Rs.{cartItem.price * cartItem.quantity}</td>
                 </tr>
+                </tbody>
               </table>
-            )) : <h3>Your cart is empty</h3>
+            ))
+          ) : (
+            <div>
+              <h3>Your cart is empty</h3>
+            </div>
+            )
           }
       </div>
 
