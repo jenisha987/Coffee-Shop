@@ -114,6 +114,7 @@ const Cart = ({ cart, setCart, removeFromCart }) => {
 
       <p>Items: <span>{carts.reduce((total, item) => total + item.quantity, 0)}</span></p>
       <p>Total Amount: <span>{carts.reduce((total, item) => total + (item.price * item.quantity), 0)}</span></p>
+      <button>Checkout</button>
     </div>
     </div>
   );

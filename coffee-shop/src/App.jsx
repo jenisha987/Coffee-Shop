@@ -6,6 +6,7 @@ import Navbar from './pages/Navbar';
 import Footer from './pages/Footer';
 import Error from './pages/Error';
 import Cart from './components/Cart';
+import { ProductDetail } from './components/ProductDetail';
 
 const App = () => {
 
@@ -50,6 +51,7 @@ const App = () => {
       <Route path='/' element={<Home addToCart={addToCart} cart={cart} />} />
       <Route path='*' element={<Error />} />
       <Route path='/cart' element={<Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} />} />
+      <Route path='/productdetail/:id' element={<ProductDetail />} />
     </Routes>
     <Footer />
     </BrowserRouter>

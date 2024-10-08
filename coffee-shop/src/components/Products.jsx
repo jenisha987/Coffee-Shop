@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import { products_list } from '../Data/Products';
 import coffee_cup from "../assets/images/coffee-cup.png";
 
@@ -35,7 +36,9 @@ const Products = ({ addToCart }) => {
           {
             randomProducts.map(product => (
               <div key={product.id} className='product-item'>
+                <Link to={`/productdetail/${product.id}`}>
                 <img src={product.image} alt='product' className='home-product-img' />
+                </Link>
                 <p>{product.title}</p>
                 <p>Rs.{product.price}
                   <button className='cart-button' onClick={() => addToCart(product)}>Add to Cart</button>
