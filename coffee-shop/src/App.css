@@ -487,8 +487,7 @@ td {
     border: 2px solid #ccc;
     width: 90px;
     height: 60px;
-}
-  
+} 
 .number-display {
     flex: 1;
     text-align: center;
@@ -766,6 +765,19 @@ td {
     .table-quantity button {
         padding: 0rem 0.5rem 0rem 0.5rem;
     }
+
+    .product-detail {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 2rem;
+        gap: 3rem;
+    }
+    .product-detail img {
+        width: 50%;
+        height: 25rem;
+    }
+    
       
 }
 
@@ -1009,12 +1021,69 @@ td {
     .delete-cart-item {
         margin-bottom: -2.2rem;
     }
-      
-      /* Additional adjustments for price and subtotal */
-      .cart-mobile .price, .cart-mobile .subtotal {
+
+    .product-detail {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        margin-top: 1.5rem;
+        gap: 5rem;
+    }
+    .product-detail img {
+        width: 100%;
+        height: 25rem;
+    }
+    .product-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .product-price {
+        font-size: 1.2rem;
+        color: #C69D5F;
+        margin-bottom: 1.5rem;
+    }
+    .product-description {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: rgb(97, 96, 96);
+    }
+    .product-cart {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .quantity-box {
+        display: flex;
+        align-items: center;
+        border: 2px solid #ccc;
+        width: 90px;
+        height: 50px;
+    } 
+    .arrows {
+        height: 50px;
+        width: 45px;
+    }
+    .arrow-up, .arrow-down {
+        height: 23px;
+    }
+    .arrow-up {
+        border-bottom: 2px solid #ccc;
+        top: 6%;
+        position: relative;
+        width: 45px;
+    }
+    .arrow-down {
+        position: relative;
+        left: 0.1rem;
+    }
+    .product-button {
+        margin-left: 1.1rem;
+    }
+    .product-addcart {
+        padding: 0.8rem 3.6rem 0.8rem 3.6rem ;
         font-size: 1rem;
-        color: #666;
-      }
+    }
+    
       
     
 }
