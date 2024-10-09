@@ -22,21 +22,41 @@ export const ProductDetail = ({ cart, setCart }) => {
     setCarts(cart);
   }, [cart]);
 
-  const handleIncrement = (index) => {
-    const updatedCarts = carts.map((item, idx) => 
-      idx === index ? { ...item, quantity: item.quantity + 1 } : item
-    );
-    setCarts(updatedCarts);
-    setCart(updatedCarts); // Update the cart in App
+  const [quantity, setQuantity] = useState(0); // Track quantity independently before adding to cart
+
+  // Sync the cart with the global cart state
+  useEffect(() => {
+    const cartItem = cart.find(item => item.id === product.id);
+    if (cartItem) {
+      setQuantity(cartItem.quantity); // Sync quantity if product is already in the cart
+    } else {
+      setQuantity(0); // Reset quantity if product isn't in the cart
+    }
+  }, [cart, product.id]);
+
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
   };
 
-  const handleDecrement = (index) => {
-    const updatedCarts = carts.map((item, idx) => 
-      idx === index ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
-    );
-    setCarts(updatedCarts);
-    setCart(updatedCarts); // Update the cart in App
+  const handleDecrement = () => {
+    setQuantity(Math.max(quantity - 1, 0));
   };
+
+    // Add to cart button logic
+    const handleAddToCart = () => {
+      const cartItem = cart.find(item => item.id === product.id);
+      if (cartItem) {
+        // If the product is already in the cart, just update the quantity
+        const updatedCarts = cart.map(item =>
+          item.id === product.id ? { ...item, quantity } : item
+        );
+        setCart(updatedCarts);
+      } else {
+        // If the product is not in the cart, add it with the current quantity or 1 if no quantity is set
+        const updatedCarts = [...cart, { ...product, quantity: quantity || 1 }];
+        setCart(updatedCarts);
+      }
+    };
 
   return (
     <div className="productdetail-page">
@@ -54,10 +74,15 @@ export const ProductDetail = ({ cart, setCart }) => {
           <p className='product-price'>Rs.{product.price}</p>
           <hr />
           <p className='product-description'>{product.description}</p>
-          <div>
-            <button onClick={() => handleIncrement(cartIndex)}><FaCaretUp size={20} /></button>
-            <p>{product.quantity}</p>
-            <button onClick={() => handleDecrement(cartIndex)}><FaCaretDown size={20} /></button>
+          <div className='product-cart'>
+            <div>
+              <button onClick={handleIncrement}><FaCaretUp size={20} /></button>
+              <p>{quantity}</p>
+              <button onClick={handleDecrement}><FaCaretDown size={20} /></button>
+            </div>
+            <div>
+              <button onClick={handleAddToCart}>Add to Cart</button>
+            </div>
           </div>
         </div>
       </div>

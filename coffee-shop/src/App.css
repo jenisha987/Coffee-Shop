@@ -477,6 +477,9 @@ td {
     margin-top: 1rem;
     color: rgb(97, 96, 96);
 }
+.product-cart {
+    display: flex;
+}
 
 @media (max-width: 1024px) {
     .container {
