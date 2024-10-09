@@ -453,6 +453,31 @@ td {
     display: none;
 }
 
+.product-detail {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 2rem;
+    gap: 5rem;
+}
+.product-detail img {
+    width: 80%;
+    height: 50rem;
+}
+.product-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.product-price {
+    font-size: 1.5rem;
+    color: #C69D5F;
+    margin-bottom: 2rem;
+}
+.product-description {
+    margin-top: 1rem;
+    color: rgb(97, 96, 96);
+}
+
 @media (max-width: 1024px) {
     .container {
         width: 90%;
