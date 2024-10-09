@@ -678,6 +678,9 @@ td {
         font-size: 1rem;
     }
 
+    .cart-header-p {
+        width: 90%;
+    }
     .cart-item-section {
         width: 90%;
     }
@@ -867,6 +870,9 @@ td {
         font-size: 1rem;
     }
 
+    .cart-header-p {
+        width: 90%;
+    }
     .cart-item-section {
         width: 90%;
         margin: 0 auto;
@@ -875,20 +881,6 @@ td {
     .cart-table {
         display: none;
     }
-    /* .cart-mobile {
-        display: block;
-        border: 1px solid rgb(229, 225, 225);
-    }
-    table {
-        width: 100%;
-        border: none;
-    }
-    .table-quantity button {
-        border: 1px solid rgb(210, 209, 209);
-        padding: 0.1rem 0.1rem 0.1rem 0.1rem;
-        background: none;
-    }  */
-
     .cart-mobile {
         display: flex;
         flex-direction: column;
