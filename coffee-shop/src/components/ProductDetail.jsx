@@ -75,13 +75,15 @@ export const ProductDetail = ({ cart, setCart }) => {
           <hr />
           <p className='product-description'>{product.description}</p>
           <div className='product-cart'>
-            <div>
-              <button onClick={handleIncrement}><FaCaretUp size={20} /></button>
-              <p>{quantity}</p>
-              <button onClick={handleDecrement}><FaCaretDown size={20} /></button>
+            <div className='quantity-box'>
+              <p className='number-display'>{quantity}</p>
+              <div className='arrows'>
+                <button className='arrow-up' onClick={handleIncrement}><FaCaretUp size={20} /></button>
+                <button className='arrow-down' onClick={handleDecrement}><FaCaretDown size={20} /></button>
+              </div>
             </div>
-            <div>
-              <button onClick={handleAddToCart}>Add to Cart</button>
+            <div className='product-button'>
+              <button className='product-addcart' onClick={handleAddToCart}>Add to Cart</button>
             </div>
           </div>
         </div>
