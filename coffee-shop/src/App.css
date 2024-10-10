@@ -531,6 +531,54 @@ td {
     color: white;
 }
 
+.productpage-header {
+    background: #9E9EA0;
+    height: 10rem;
+    align-items: center;
+}
+.productpage-header h1 {
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 20%;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+.productpage-p {
+    position: relative;
+    display: flex;
+    top: 25%;
+    justify-content: center;
+    color: white;
+}
+.productpage-p a {
+    color: white;
+}
+.productpage-p span {
+    position: relative;
+    top: 10%;
+    margin-right: 0.5rem;
+}
+.product-list {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+.product-item {
+    margin-bottom: -20px;
+    cursor: pointer;
+}
+.home-product-img {
+    width: 95%;
+    height: 70%;
+}
+.home-product-img:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 1024px) {
     .container {
         width: 90%;

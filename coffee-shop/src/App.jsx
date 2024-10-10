@@ -7,6 +7,7 @@ import Footer from './pages/Footer';
 import Error from './pages/Error';
 import Cart from './components/Cart';
 import { ProductDetail } from './components/ProductDetail';
+import ProductPage from './components/ProductPage';
 
 const App = () => {
 
@@ -52,6 +53,7 @@ const App = () => {
       <Route path='*' element={<Error />} />
       <Route path='/cart' element={<Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} />} />
       <Route path='/productdetail/:productId' element={<ProductDetail cart={cart} setCart={setCart} />} />
+      <Route path='/products' element={<ProductPage />} />
     </Routes>
     <Footer />
     </BrowserRouter>
