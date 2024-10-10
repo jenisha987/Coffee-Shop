@@ -53,7 +53,9 @@ const Cart = ({ cart, setCart, removeFromCart }) => {
                 carts.map((cartItem, cartIndex) => (
                     <tr key={cartIndex} className='table-tr'>
                       <td className='table-product'>
+                        <Link to={`/productdetail/${cartItem.id}`}>
                           <img src={cartItem.image} alt='cartItem' width={200} />
+                        </Link>
                           <p>{cartItem.title}</p>
                       </td>
                       <td><p>Rs.{cartItem.price}</p></td>
