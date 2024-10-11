@@ -26,11 +26,15 @@ export const Home = ({ addToCart }) => {
     <Slider {...settings}>
       <div>
         <img src={home} alt="home" className="home-img" />
-        <button className='shop-btn'>Shop Now</button>
+        <Link to="/products">
+          <button className='shop-btn'>Shop Now</button>
+        </Link>
       </div>
       <div>
         <img src={home1} alt="home1" className="home-img" />
-        <button className='shop-button'>Shop Now</button>
+        <Link to="/products">
+          <button className='shop-button'>Shop Now</button>
+        </Link>
       </div>
     </Slider>
 
@@ -38,7 +42,9 @@ export const Home = ({ addToCart }) => {
       <div>
       <p className='section-p'>coffee solves everything</p>
       <p className='section-p-p'>Experience coffee as it should be—fresh, bold, and always satisfying</p>
+      <Link to="/products">
       <button className="section-button">shop now</button>
+      </Link>
       </div>
       <div className="container-section">
         <div className="background-bottom"></div>
@@ -57,14 +63,18 @@ export const Home = ({ addToCart }) => {
       <div className='home-sectionn'>
       <p className='section-p'>feel good with coffee</p>
       <p className='section-p-p'>Start your day with a perfectly brewed cup of joy at coffee cove</p>
+      <Link to="/products">
       <button className="section-button">shop now</button>
+      </Link>
       </div>
     </div>
     <div className='home-section2'>
       <div>
       <p className='section-p'>feel good with coffee</p>
       <p className='section-p-p'>Start your day with a perfectly brewed cup of joy at coffee cove</p>
+      <Link to="/products">
       <button className="section-button">shop now</button>
+      </Link>
       </div>
       <div className="container-section">
         <div className="background-bottom"></div>

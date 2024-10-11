@@ -52,7 +52,9 @@ const Products = ({ addToCart }) => {
         <div className='home-tag-section'>
           <p className='home-tag-p'>special pure coffee</p>
           <p className='home-tag-p-p'>When you've got your health, you got everything</p>
+          <Link to="/products">
           <button className='home-tag-button'>shop now</button>
+          </Link>
         </div>
         <div>
           <img src={coffee_cup} alt='coffee-cup' className='home-tag-img' />
