@@ -8,7 +8,7 @@ import Error from './pages/Error';
 import Cart from './components/Cart';
 import { ProductDetail } from './components/ProductDetail';
 import ProductPage from './components/ProductPage';
-import { Login } from './components/Login';
+import Login from './components/Login';
 import Register from './components/Register';
 
 const App = () => {
