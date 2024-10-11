@@ -37,6 +37,11 @@ const Navbar = ({ count }) => {
     navigate(`/search?query=${searchTerm}`);
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("loggedin");
+    navigate("/login");
+  }
+
   return (
     <nav>
       <div className="container nav-container">
@@ -82,7 +87,8 @@ const Navbar = ({ count }) => {
               !isNavlinksShowing ? <MdMenu /> : <RxCross2 />
             }
           </button>
-          <button className='button-login'>Login</button>
+          <Link to="/login" className=''>Login</Link>
+          <button onClick={handleLogout} className=''>Logout</button>
         </div>
       </div>
     </nav>
