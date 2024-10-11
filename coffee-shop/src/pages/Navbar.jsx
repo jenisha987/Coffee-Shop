@@ -9,7 +9,9 @@ import { RxCross2 } from "react-icons/rx";
 
 const Navbar = ({ count }) => {
 
-  const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false)
+  const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false);
+  const [ isSearchShowing, setIsSearchShowing ] = useState(false);
+  const [ searchTerm, setSearchTerm ] = useState('');
   const navigate = useNavigate();
 
   const handleCartClick = () => {
@@ -18,6 +20,19 @@ const Navbar = ({ count }) => {
 
   const handleLinkClick = () => {
     setIsNavlinksShowing(false);
+  }
+
+  const handleSearchToogle = () => {
+    setIsSearchShowing(!isSearchShowing);
+  }
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
+
+  const handleSearchSubmit = () => {
+    e.preventDefault();
+    navigate(`/search?query=${searchTerm}`);
   }
 
   return (
@@ -40,7 +55,23 @@ const Navbar = ({ count }) => {
         </ul>
 
         <div className="nav-right">
-          <CiSearch />
+          <div>
+            {
+              isSearchShowing ? (
+                <form onSubmit={handleSearchSubmit}>
+                  <input 
+                    type="text"
+                    className='search-input'
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    placeholder='Search...'
+                  />
+                </form>
+              ) : (
+                <CiSearch onClick={handleSearchToogle} />
+              )
+            } 
+          </div>
           <PiShoppingCartThin onClick={handleCartClick} />
           <div className="cart-count">{count}</div> 
           <button className='menu-button' onClick={() => {setIsNavlinksShowing(!isNavlinksShowing)}}>
