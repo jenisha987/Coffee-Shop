@@ -13,6 +13,7 @@ const Login = () => {
         e.preventDefault();
         const loggeduser = JSON.parse(localStorage.getItem("user"));
         if (input.email === loggeduser.email && input.password === loggeduser.password) {
+            localStorage.setItem("loggedin", true)
             navigate("/");
         } else {
             alert("Wrong email or password");

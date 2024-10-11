@@ -9,6 +9,8 @@ import { RxCross2 } from "react-icons/rx";
 
 const Navbar = ({ count }) => {
 
+  const userName = JSON.parse(localStorage.getItem("user"));
+
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false);
   const [ isSearchShowing, setIsSearchShowing ] = useState(false);
   const [ searchTerm, setSearchTerm ] = useState('');
@@ -42,6 +44,7 @@ const Navbar = ({ count }) => {
           <SiCoffeescript />
           <p>Coffee Cove</p>
         </Link>
+        <p>{userName.name}</p>
         <ul className={`nav-links ${isNavlinksShowing ? 'navlinksShow' : 'navlinksHide'}`}>
           {
             navlinks.map(({name, path}, index) => {
