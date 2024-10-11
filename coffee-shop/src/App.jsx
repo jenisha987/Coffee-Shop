@@ -10,6 +10,7 @@ import { ProductDetail } from './components/ProductDetail';
 import ProductPage from './components/ProductPage';
 import Login from './components/Login';
 import Register from './components/Register';
+import ProtectedRoute from './services/protectedRoute';
 
 const App = () => {
 
@@ -51,7 +52,9 @@ const App = () => {
     <BrowserRouter>
     <Navbar count={totalItemsInCart} />
     <Routes>
-      <Route path='/' element={<Home addToCart={addToCart} cart={cart} />} />
+      <Route path='/' element={<ProtectedRoute />} >
+        <Route path='/' element={<Home addToCart={addToCart} cart={cart} />} />
+      </Route>
       <Route path='*' element={<Error />} />
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
