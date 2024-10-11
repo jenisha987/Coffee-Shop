@@ -16,6 +16,10 @@ const Navbar = ({ count }) => {
     navigate('/cart');
   }
 
+  const handleLinkClick = () => {
+    setIsNavlinksShowing(false);
+  }
+
   return (
     <nav>
       <div className="container nav-container">
@@ -28,7 +32,7 @@ const Navbar = ({ count }) => {
             navlinks.map(({name, path}, index) => {
               return (
                 <li key={index}>
-                  <NavLink to={path}>{name}</NavLink>
+                  <NavLink to={path} onClick={handleLinkClick}>{name}</NavLink>
                 </li>
               )
             })

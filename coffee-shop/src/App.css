@@ -885,7 +885,6 @@ td {
         font-size: large;
         cursor: pointer;
     }
-    
     .shop-button {
         border: none;
         position: absolute;
@@ -924,10 +923,11 @@ td {
         gap: 30px;
     }
     .product-item {
-        margin-bottom: -15px;
+        margin-bottom: -5px;
     }
     .home-product-img {
         width: 100%;
+        height: 70%;
     }
     .home-tag {
         height: 300px;
@@ -1025,7 +1025,7 @@ td {
     }
     .cart-button {
         position: relative;
-        left: 5%;
+        left: 1%;
         border: none;
         background: #C69D5F;
         padding: 0.5rem;
@@ -1167,13 +1167,6 @@ td {
         margin-top: 3rem;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
-    }
-    .product-item {
-        margin-bottom: -5px;
-    }
-    .home-product-img {
-        width: 100%;
-        height: 70%;
     }
     
       
