@@ -6,6 +6,8 @@ import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { MdMenu } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
+import { CiUser } from "react-icons/ci"; 
+import { LuLogOut } from "react-icons/lu";
 
 const Navbar = ({ count }) => {
 
@@ -87,8 +89,8 @@ const Navbar = ({ count }) => {
               !isNavlinksShowing ? <MdMenu /> : <RxCross2 />
             }
           </button>
-          <Link to="/login" className=''>Login</Link>
-          <button onClick={handleLogout} className=''>Logout</button>
+          <Link to="/login" className=''><CiUser /></Link>
+          <button onClick={handleLogout} className=''><LuLogOut /></button>
         </div>
       </div>
     </nav>

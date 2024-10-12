@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { SiCoffeescript } from "react-icons/si";
+import { IoMdMail } from "react-icons/io";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 const Login = () => {
 
@@ -21,49 +24,55 @@ const Login = () => {
     }
  
   return (
-    <div>
-        <div>Login</div>
-        <div>
-            <form onSubmit={handleLogin}>
-                <div>
-                    <label htmlFor='email'>Email</label>
-                    <input 
-                        type="text" 
-                        name="email"
-                        value={input.email}
-                        onChange={(e) => 
-                            setInput({
-                                ...input, 
-                                [e.target.name]: e.target.value,
-                            })
-                        } 
-                        id="email"
-                        placeholder='Email' />
-                </div>
-                <div>
-                    <label htmlFor='password'>Password</label>
-                    <input 
-                        type="password" 
-                        name="password" 
-                        value={input.password}
-                        onChange={(e) => 
-                            setInput({
-                                ...input, 
-                                [e.target.name]: e.target.value,
-                            })
-                        }
-                        id="password"
-                        placeholder='Password' />
-                </div>
-                <div>
-                    <button type='submit'>Login</button>
-                </div>
-                <div>
-                    <p>Don't have an account?</p>
-                    <Link to="/register">Register here</Link>
-                </div>
-            </form>
+    <div className='signup-box'>
+        <div className='title'>
+            <Link to="/" className='form-logo'>
+            <SiCoffeescript />
+            <span>Coffee Cove</span>
+            </Link>
         </div>
+        <div className='underline'><hr /></div>
+        <div className='form-header'>great to have you!</div>
+        <form onSubmit={handleLogin}>
+            <div className='form-input'>
+                <IoMdMail />
+                <input 
+                    type="text" 
+                    name="email"
+                    value={input.email}
+                    onChange={(e) => 
+                        setInput({
+                            ...input, 
+                            [e.target.name]: e.target.value,
+                        })
+                    } 
+                    id="email"
+                    placeholder='Email address' />
+            </div>
+            <div className='form-input'>
+                <RiLockPasswordFill />
+                <input 
+                    type="password" 
+                    name="password" 
+                    value={input.password}
+                    onChange={(e) => 
+                        setInput({
+                            ...input, 
+                            [e.target.name]: e.target.value,
+                        })
+                    }
+                    id="password"
+                    placeholder='Password' />
+            </div>
+            <p>Forgot your password?</p>
+            <div className='form-input'>
+                <button type='submit'>log in</button>
+                <div className='form-login'>
+                    <>Don't have an account?</>
+                    <Link to="/register">register</Link>
+                </div>
+            </div>
+        </form>
     </div>
   )
 }

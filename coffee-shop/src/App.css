@@ -572,6 +572,101 @@ td {
     cursor: pointer;
 }
 
+.signup-box {
+    width: 25%;
+    margin: 0 auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 550px;
+    margin-top: 4rem;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+.form-logo {
+    display: flex;
+    gap: 5px;
+    font-size: 1.5rem;
+    color: black;
+}
+.form-logo span {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-top: -0.5rem;
+    text-transform: uppercase;
+}
+.underline {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+.form-header {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.signup-box form {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+.form-input {
+    position: relative;
+    margin-bottom: 1.2rem;
+    width: 100%;
+}
+.form-input svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #b2adad;
+}
+.form-input input {
+    width: 100%;
+    padding: 18px 10px 18px 40px; /* Add padding-left to make space for the icon */
+    border: 1px solid #ccc;
+    font-size: 0.7rem;
+}
+.signup-box p {
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.form-input button {
+    width: 100%;
+    padding: 15px 0px 15px 0px; /* Add padding-left to make space for the icon */
+    border: none;
+    background: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.form-login {
+    width: 100%;
+    padding: 15px 0px 15px 0px; /* Add padding-left to make space for the icon */
+    border: none;
+    background: rgb(149, 146, 146);
+    color: rgb(25, 24, 24);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+.form-login a {
+    color: #fff;
+    margin-left: 1rem;
+    text-transform: uppercase;
+}
+
 
 @media (max-width: 1024px) {
     .container {
