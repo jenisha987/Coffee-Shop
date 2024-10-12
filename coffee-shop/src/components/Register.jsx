@@ -44,7 +44,8 @@ const Register = () => {
                         })
                     }
                     id="name"
-                    placeholder='Username' />
+                    placeholder='Username'
+                    autoComplete='off' />
             </div>
             <div className='form-input'>
                 <IoMdMail />
@@ -59,7 +60,8 @@ const Register = () => {
                         })
                     } 
                     id="email"
-                    placeholder='Email address' />
+                    placeholder='Email address'
+                    autoComplete='off' />
             </div>
             <div className='form-input'>
                 <RiLockPasswordFill />
@@ -74,7 +76,8 @@ const Register = () => {
                         })
                     }
                     id="password"
-                    placeholder='Password' />
+                    placeholder='Password'
+                    autoComplete='off' />
             </div>
             {/* <p>Forgot your password?</p> */}
             <div className='form-input'>
