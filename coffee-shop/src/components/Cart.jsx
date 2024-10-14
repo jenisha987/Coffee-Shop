@@ -6,6 +6,9 @@ import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 
 const Cart = ({ cart, setCart, removeFromCart }) => {
+  // if (!isLoggedIn) {
+  //   return <h3>Please log in to view your cart items.</h3>;
+  // }
   const [carts, setCarts] = useState([]);
 
   useEffect(() => {

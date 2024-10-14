@@ -20,8 +20,13 @@ const Navbar = ({ count }) => {
   const navigate = useNavigate();
 
   const handleCartClick = () => {
+    // if (!isLoggedIn) {
+    //   alert('Please log in to access the cart.');
+    //   navigate("/login");
+    //   return;
+    // }
     navigate('/cart');
-  }
+  };
 
   const handleLinkClick = () => {
     setIsNavlinksShowing(false);
@@ -42,8 +47,10 @@ const Navbar = ({ count }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("loggedin");
+    // localStorage.removeItem("cart"); // Clear the current cart
+    // localStorage.removeItem("currentUser"); // Clear the current user
     navigate("/login");
-  }
+  };
 
   return (
     <nav>
@@ -100,6 +107,9 @@ const Navbar = ({ count }) => {
           ) : (
           <Link to="/login" className=''><CiUser /></Link>
           )}
+          {/* <button onClick={isLoggedIn ? handleLogout : () => navigate('/login')}>
+            {isLoggedIn ? <LuLogOut /> : <CiUser />}
+          </button> */}
         </div>
       </div>
     </nav>
