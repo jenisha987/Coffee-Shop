@@ -14,16 +14,19 @@ import ProtectedRoute from './services/ProtectedRoute';
 
 const App = () => {
 
-  const LOCAL_STORAGE_KEY = "cart";
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const LOCAL_STORAGE_KEY = `cart_${loggedInUser?.email}`;
 
   const [ cart, setCart ] = useState(() => {
-    const storedCart = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const storedCart = loggedInUser ? localStorage.getItem(LOCAL_STORAGE_KEY) : null;
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
-  }, [cart]);
+    if (loggedInUser) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
+    }
+  }, [cart, loggedInUser, LOCAL_STORAGE_KEY]);
 
 
   const addToCart = (data) => {

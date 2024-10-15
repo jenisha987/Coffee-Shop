@@ -12,7 +12,7 @@ import { LuLogOut } from "react-icons/lu";
 const Navbar = ({ count }) => {
 
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-  const isLoggedIn = JSON.parse(localStorage.getItem("loggedin"));
+  // const isLoggedIn = JSON.parse(localStorage.getItem("loggedin"));
 
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false);
   const [ isSearchShowing, setIsSearchShowing ] = useState(false);
@@ -41,7 +41,7 @@ const Navbar = ({ count }) => {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem("loggedin");
+    // localStorage.removeItem("loggedin");
     localStorage.removeItem("loggedInUser"); // Remove logged-in user details
     navigate("/login");
   };
@@ -53,7 +53,7 @@ const Navbar = ({ count }) => {
           <SiCoffeescript />
           <p>Coffee Cove</p>
         </Link>
-        {isLoggedIn && loggedInUser && <p>{loggedInUser.name}</p> }
+        {loggedInUser && <p>{loggedInUser.name}</p> }
         <ul className={`nav-links ${isNavlinksShowing ? 'navlinksShow' : 'navlinksHide'}`}>
           {
             navlinks.map(({name, path}, index) => {
@@ -85,18 +85,16 @@ const Navbar = ({ count }) => {
             } 
           </div>
           <PiShoppingCartThin onClick={handleCartClick} />
-          {isLoggedIn && (
-            <>
+          {loggedInUser && 
               <div className="cart-count">{count}</div> 
-            </>
-          )}
+          }
           <button className='menu-button' onClick={() => {setIsNavlinksShowing(!isNavlinksShowing)}}>
             {
               !isNavlinksShowing ? <MdMenu /> : <RxCross2 />
             }
           </button>
 
-          {isLoggedIn ? (
+          {loggedInUser ? (
             <button onClick={handleLogout} className=''><LuLogOut /></button>
           ) : (
           <Link to="/login" className=''><CiUser /></Link>

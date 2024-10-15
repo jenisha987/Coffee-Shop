@@ -6,49 +6,50 @@ import { RiLockPasswordFill } from "react-icons/ri";
 
 const Login = () => {
 
-    const navigate = useNavigate();
-    const [ input, setInput ] = useState({
-        email: "",
-        password: "",
-    });
+    // const navigate = useNavigate();
+    // const [ input, setInput ] = useState({
+    //     email: "",
+    //     password: "",
+    // });
+ 
+
+    // State for users
+    // const [users, setUsers] = useState([]);
+
+    // // Load users from localStorage on component mount
+    // useEffect(() => {
+    //     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+    //     setUsers(storedUsers);
+    // }, []);
 
     // const handleLogin = (e) => {
     //     e.preventDefault();
-    //     const loggeduser = JSON.parse(localStorage.getItem("user"));
-    //     if (input.email === loggeduser.email && input.password === loggeduser.password) {
-    //         localStorage.setItem("loggedin", true)
+
+    //     // Check if the email and password match any user in the array
+    //     const loggedUser = users.find(
+    //         (user) => user.email === input.email && user.password === input.password
+    //     );
+
+    //     if (loggedUser) {
+    //         localStorage.setItem("loggedin", true);
+    //         localStorage.setItem("loggedInUser", JSON.stringify(loggedUser)); // Store current user's data
     //         navigate("/");
     //     } else {
     //         alert("Wrong email or password");
     //     }
-    // }
- 
+    // };
 
-    // State for users
-    const [users, setUsers] = useState([]);
 
-    // Load users from localStorage on component mount
-    useEffect(() => {
-        const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-        setUsers(storedUsers);
-    }, []);
+const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-    const handleLogin = (e) => {
-        e.preventDefault();
-
-        // Check if the email and password match any user in the array
-        const loggedUser = users.find(
-            (user) => user.email === input.email && user.password === input.password
-        );
-
-        if (loggedUser) {
-            localStorage.setItem("loggedin", true);
-            localStorage.setItem("loggedInUser", JSON.stringify(loggedUser)); // Store current user's data
-            navigate("/");
-        } else {
-            alert("Wrong email or password");
-        }
-    };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const loggedInUser = { email, name };
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser)); // Store user in localStorage
+    navigate('/');
+  };
 
 
   return (
@@ -67,12 +68,9 @@ const Login = () => {
                 <input 
                     type="text" 
                     name="email"
-                    value={input.email}
+                    value={email}
                     onChange={(e) => 
-                        setInput({
-                            ...input, 
-                            [e.target.name]: e.target.value,
-                        })
+                        setEmail( e.target.value)
                     } 
                     id="email"
                     placeholder='Email address'
@@ -83,12 +81,9 @@ const Login = () => {
                 <input 
                     type="password" 
                     name="password" 
-                    value={input.password}
+                    value={password}
                     onChange={(e) => 
-                        setInput({
-                            ...input, 
-                            [e.target.name]: e.target.value,
-                        })
+                        setPassword(e.target.value)
                     }
                     id="password"
                     placeholder='Password'
