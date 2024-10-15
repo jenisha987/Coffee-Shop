@@ -11,7 +11,7 @@ import { LuLogOut } from "react-icons/lu";
 
 const Navbar = ({ count }) => {
 
-  const userName = JSON.parse(localStorage.getItem("user"));
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
   const isLoggedIn = JSON.parse(localStorage.getItem("loggedin"));
 
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false);
@@ -20,11 +20,6 @@ const Navbar = ({ count }) => {
   const navigate = useNavigate();
 
   const handleCartClick = () => {
-    // if (!isLoggedIn) {
-    //   alert('Please log in to access the cart.');
-    //   navigate("/login");
-    //   return;
-    // }
     navigate('/cart');
   };
 
@@ -47,8 +42,7 @@ const Navbar = ({ count }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("loggedin");
-    // localStorage.removeItem("cart"); // Clear the current cart
-    // localStorage.removeItem("currentUser"); // Clear the current user
+    localStorage.removeItem("loggedInUser"); // Remove logged-in user details
     navigate("/login");
   };
 
@@ -59,7 +53,7 @@ const Navbar = ({ count }) => {
           <SiCoffeescript />
           <p>Coffee Cove</p>
         </Link>
-        {isLoggedIn && <p>{userName.name}</p> }
+        {isLoggedIn && loggedInUser && <p>{loggedInUser.name}</p> }
         <ul className={`nav-links ${isNavlinksShowing ? 'navlinksShow' : 'navlinksHide'}`}>
           {
             navlinks.map(({name, path}, index) => {
@@ -90,9 +84,9 @@ const Navbar = ({ count }) => {
               )
             } 
           </div>
+          <PiShoppingCartThin onClick={handleCartClick} />
           {isLoggedIn && (
             <>
-              <PiShoppingCartThin onClick={handleCartClick} />
               <div className="cart-count">{count}</div> 
             </>
           )}
@@ -107,9 +101,6 @@ const Navbar = ({ count }) => {
           ) : (
           <Link to="/login" className=''><CiUser /></Link>
           )}
-          {/* <button onClick={isLoggedIn ? handleLogout : () => navigate('/login')}>
-            {isLoggedIn ? <LuLogOut /> : <CiUser />}
-          </button> */}
         </div>
       </div>
     </nav>

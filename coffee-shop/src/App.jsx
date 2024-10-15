@@ -14,9 +14,6 @@ import ProtectedRoute from './services/ProtectedRoute';
 
 const App = () => {
 
-  // const [cart, setCart] = useState([]);
-  // const [currentUser, setCurrentUser] = useState(null);
-
   const LOCAL_STORAGE_KEY = "cart";
 
   const [ cart, setCart ] = useState(() => {
@@ -28,27 +25,8 @@ const App = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
   }, [cart]);
 
-  // useEffect(() => {
-  //   const loggedInUser = JSON.parse(localStorage.getItem('loggedin'));
-  //   const currentUserEmail = JSON.parse(localStorage.getItem('currentUser'));
-  //   if (loggedInUser && currentUserEmail) {
-  //     const userCart = JSON.parse(localStorage.getItem(`${currentUserEmail}_cart`)) || [];
-  //     setCart(userCart);  // Load cart specific to the logged-in user
-  //     setCurrentUser(currentUserEmail);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (currentUser) {
-  //     localStorage.setItem(`${currentUser}_cart`, JSON.stringify(cart));  // Save the cart for the logged-in user
-  //   }
-  // }, [cart, currentUser]);
 
   const addToCart = (data) => {
-    // if (!currentUser) {
-    //   alert("Please login to add items to cart");
-    //   return;
-    // }
     setCart((prevCart) => {
       const existingItemIndex = prevCart.findIndex(item => item.id === data.id);
       if (existingItemIndex !== -1) {

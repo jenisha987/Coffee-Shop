@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { SiCoffeescript } from "react-icons/si";
 import { FaUser } from "react-icons/fa6";
@@ -14,11 +14,42 @@ const Register = () => {
         password: "",
     });
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     localStorage.setItem("user", JSON.stringify(input));
+    //     navigate("/login");
+    // }
+
+
+    // State for users
+    const [users, setUsers] = useState([]);
+
+    // Load users from localStorage on component mount
+    useEffect(() => {
+        const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+        setUsers(storedUsers);
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem("user", JSON.stringify(input));
+
+        // Check if the email is already registered
+        const userExists = users.find((user) => user.email === input.email);
+        if (userExists) {
+            alert("User with this email already exists!");
+            return;
+        }
+
+        // Add new user to the users array
+        const updatedUsers = [...users, input];
+        setUsers(updatedUsers); // Update the state
+
+        // Save updated users list to localStorage
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+        // Navigate to login page
         navigate("/login");
-    }
+    };
 
   return (
     <div className='signup-box'>

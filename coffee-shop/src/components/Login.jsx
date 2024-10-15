@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { SiCoffeescript } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
@@ -12,17 +12,45 @@ const Login = () => {
         password: "",
     });
 
+    // const handleLogin = (e) => {
+    //     e.preventDefault();
+    //     const loggeduser = JSON.parse(localStorage.getItem("user"));
+    //     if (input.email === loggeduser.email && input.password === loggeduser.password) {
+    //         localStorage.setItem("loggedin", true)
+    //         navigate("/");
+    //     } else {
+    //         alert("Wrong email or password");
+    //     }
+    // }
+ 
+
+    // State for users
+    const [users, setUsers] = useState([]);
+
+    // Load users from localStorage on component mount
+    useEffect(() => {
+        const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+        setUsers(storedUsers);
+    }, []);
+
     const handleLogin = (e) => {
         e.preventDefault();
-        const loggeduser = JSON.parse(localStorage.getItem("user"));
-        if (input.email === loggeduser.email && input.password === loggeduser.password) {
-            localStorage.setItem("loggedin", true)
+
+        // Check if the email and password match any user in the array
+        const loggedUser = users.find(
+            (user) => user.email === input.email && user.password === input.password
+        );
+
+        if (loggedUser) {
+            localStorage.setItem("loggedin", true);
+            localStorage.setItem("loggedInUser", JSON.stringify(loggedUser)); // Store current user's data
             navigate("/");
         } else {
             alert("Wrong email or password");
         }
-    }
- 
+    };
+
+
   return (
     <div className='signup-box'>
         <div className='title'>
