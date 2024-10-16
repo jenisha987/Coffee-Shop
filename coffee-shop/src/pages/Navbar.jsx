@@ -11,7 +11,22 @@ import { LuLogOut } from "react-icons/lu";
 
 const Navbar = ({ count, loggedInUser, setLoggedInUser }) => {
 
-  // const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const getLoggedInUsername = () => {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const loggedinUser = JSON.parse(localStorage.getItem("loggedInUser"))
+
+    if (loggedinUser && users.length > 0) {
+      const loggeduser = users.find((user) => user.email === loggedinUser.email && user.password === loggedinUser.password);
+      
+      if (loggeduser) {
+        return loggeduser.name;
+      }
+    }
+    return null;
+  }
+
+  const loggedInUsername = getLoggedInUsername();
+  
   // const isLoggedIn = JSON.parse(localStorage.getItem("loggedin"));
 
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false);
@@ -54,7 +69,8 @@ const Navbar = ({ count, loggedInUser, setLoggedInUser }) => {
           <SiCoffeescript />
           <p>Coffee Cove</p>
         </Link>
-        {loggedInUser && <p>{loggedInUser.email}</p> }
+        {/* {loggedInUser && <p>{loggedInUsername.email}</p> } */}
+        {loggedInUsername}
         <ul className={`nav-links ${isNavlinksShowing ? 'navlinksShow' : 'navlinksHide'}`}>
           {
             navlinks.map(({name, path}, index) => {
