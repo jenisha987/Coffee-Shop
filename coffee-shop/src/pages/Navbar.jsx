@@ -53,7 +53,7 @@ const Navbar = ({ count, loggedInUser, setLoggedInUser }) => {
   }
 
   const handleLogout = () => {
-    // localStorage.removeItem("loggedin");
+    localStorage.removeItem("loggedin");
     localStorage.removeItem("loggedInUser"); // Remove logged-in user details
     setLoggedInUser(null);
     navigate("/login");
