@@ -41,17 +41,39 @@ const Login = ({ setLoggedInUser }) => {
 
 
     const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    // const [users, setUsers] = useState([]);
     const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+    //     setUsers(storedUsers);
+    // }, []);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        const user =  { name, email, password };
+        const user =  { email, password };
         localStorage.setItem("loggedInUser", JSON.stringify(user)); // Store user in localStorage
         setLoggedInUser(user);
         navigate('/');
     };
+
+    // const handleLogin = (e) => {
+    //     e.preventDefault();
+
+    //     // Find the user with matching email and password
+    //     const loggedUser = users.find(
+    //         (user) => user.email === email && user.password === password
+    //     );
+
+    //     if (loggedUser) {
+    //         localStorage.setItem("loggedInUser", JSON.stringify(loggedUser)); // Store current user's data in localStorage
+    //         setLoggedInUser(loggedUser); // Set the logged-in user state in the App component
+    //         navigate("/"); // Redirect to the homepage
+    //     } else {
+    //         alert("Invalid email or password");
+    //     }
+    // };
 
 
     return (
