@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { products_list } from '../Data/Products';
 import { IoIosArrowForward } from "react-icons/io";
 
-const ProductPage = () => {
+const ProductPage = ({ addToCart }) => {
   return (
     <>
         <div className='productpage-header'>

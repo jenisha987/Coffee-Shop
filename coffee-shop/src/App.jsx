@@ -14,7 +14,7 @@ import ProtectedRoute from './services/ProtectedRoute';
 
 const App = () => {
 
-  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const [loggedInUser, setLoggedInUser ] = useState(() => JSON.parse(localStorage.getItem("loggedInUser"))) ;
   const LOCAL_STORAGE_KEY = `cart_${loggedInUser?.email}`;
 
   const [ cart, setCart ] = useState(() => {
@@ -54,17 +54,17 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    <Navbar count={totalItemsInCart} />
+    <Navbar count={totalItemsInCart} loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
     <Routes>
-      <Route path='/' element={<Home addToCart={addToCart} cart={cart} />} />
+      <Route path='/' element={<Home addToCart={addToCart} />} />
       <Route path='/' element={<ProtectedRoute />} >
         <Route path='/cart' element={<Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} />} />
       </Route>
       <Route path='*' element={<Error />} />
-      <Route path='/login' element={<Login />} />
+      <Route path='/login' element={<Login setLoggedInUser={setLoggedInUser} />} />
       <Route path='/register' element={<Register />} />
       <Route path='/productdetail/:productId' element={<ProductDetail cart={cart} setCart={setCart} />} />
-      <Route path='/products' element={<ProductPage />} />
+      <Route path='/products' element={<ProductPage addToCart={addToCart} />} />
     </Routes>
     <Footer />
     </BrowserRouter>

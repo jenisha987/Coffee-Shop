@@ -4,7 +4,7 @@ import { SiCoffeescript } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
 
-const Login = () => {
+const Login = ({ setLoggedInUser }) => {
 
     // const navigate = useNavigate();
     // const [ input, setInput ] = useState({
@@ -40,66 +40,68 @@ const Login = () => {
     // };
 
 
-const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const loggedInUser = { email, name };
-    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser)); // Store user in localStorage
-    navigate('/');
-  };
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const user =  { name, email, password };
+        localStorage.setItem("loggedInUser", JSON.stringify(user)); // Store user in localStorage
+        setLoggedInUser(user);
+        navigate('/');
+    };
 
 
-  return (
-    <div className='signup-box'>
-        <div className='title'>
-            <Link to="/" className='form-logo'>
-            <SiCoffeescript />
-            <span>Coffee Cove</span>
-            </Link>
-        </div>
-        <div className='underline'><hr /></div>
-        <div className='form-header'>great to have you!</div>
-        <form onSubmit={handleLogin}>
-            <div className='form-input'>
-                <IoMdMail />
-                <input 
-                    type="text" 
-                    name="email"
-                    value={email}
-                    onChange={(e) => 
-                        setEmail( e.target.value)
-                    } 
-                    id="email"
-                    placeholder='Email address'
-                    autoComplete='off' />
+    return (
+        <div className='signup-box'>
+            <div className='title'>
+                <Link to="/" className='form-logo'>
+                <SiCoffeescript />
+                <span>Coffee Cove</span>
+                </Link>
             </div>
-            <div className='form-input'>
-                <RiLockPasswordFill />
-                <input 
-                    type="password" 
-                    name="password" 
-                    value={password}
-                    onChange={(e) => 
-                        setPassword(e.target.value)
-                    }
-                    id="password"
-                    placeholder='Password'
-                    autoComplete='off' />
-            </div>
-            <p>Forgot your password?</p>
-            <div className='form-input'>
-                <button type='submit'>log in</button>
-                <div className='form-login'>
-                    <>Don't have an account?</>
-                    <Link to="/register">register</Link>
+            <div className='underline'><hr /></div>
+            <div className='form-header'>great to have you!</div>
+            <form onSubmit={handleLogin}>
+                <div className='form-input'>
+                    <IoMdMail />
+                    <input 
+                        type="text" 
+                        name="email"
+                        value={email}
+                        onChange={(e) => 
+                            setEmail( e.target.value)
+                        } 
+                        id="email"
+                        placeholder='Email address'
+                        autoComplete='off' />
                 </div>
-            </div>
-        </form>
-    </div>
-  )
+                <div className='form-input'>
+                    <RiLockPasswordFill />
+                    <input 
+                        type="password" 
+                        name="password" 
+                        value={password}
+                        onChange={(e) => 
+                            setPassword(e.target.value)
+                        }
+                        id="password"
+                        placeholder='Password'
+                        autoComplete='off' />
+                </div>
+                <p>Forgot your password?</p>
+                <div className='form-input'>
+                    <button type='submit'>log in</button>
+                    <div className='form-login'>
+                        <>Don't have an account?</>
+                        <Link to="/register">register</Link>
+                    </div>
+                </div>
+            </form>
+        </div>
+    )
 }
 
 export default Login

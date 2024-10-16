@@ -9,9 +9,9 @@ import { RxCross2 } from "react-icons/rx";
 import { CiUser } from "react-icons/ci"; 
 import { LuLogOut } from "react-icons/lu";
 
-const Navbar = ({ count }) => {
+const Navbar = ({ count, loggedInUser, setLoggedInUser }) => {
 
-  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  // const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
   // const isLoggedIn = JSON.parse(localStorage.getItem("loggedin"));
 
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false);
@@ -43,6 +43,7 @@ const Navbar = ({ count }) => {
   const handleLogout = () => {
     // localStorage.removeItem("loggedin");
     localStorage.removeItem("loggedInUser"); // Remove logged-in user details
+    setLoggedInUser(null);
     navigate("/login");
   };
 
@@ -53,7 +54,7 @@ const Navbar = ({ count }) => {
           <SiCoffeescript />
           <p>Coffee Cove</p>
         </Link>
-        {loggedInUser && <p>{loggedInUser.name}</p> }
+        {loggedInUser && <p>{loggedInUser.email}</p> }
         <ul className={`nav-links ${isNavlinksShowing ? 'navlinksShow' : 'navlinksHide'}`}>
           {
             navlinks.map(({name, path}, index) => {
