@@ -54,6 +54,7 @@ const Login = ({ setLoggedInUser }) => {
         e.preventDefault();
         const user =  { email, password };
         localStorage.setItem("loggedInUser", JSON.stringify(user)); // Store user in localStorage
+        localStorage.setItem("loggedin", true); // Store user in localStorage
         setLoggedInUser(user);
         navigate('/');
     };

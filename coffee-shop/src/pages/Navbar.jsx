@@ -26,9 +26,6 @@ const Navbar = ({ count, loggedInUser, setLoggedInUser }) => {
   }
 
   const loggedInUsername = getLoggedInUsername();
-  
-  // const isLoggedIn = JSON.parse(localStorage.getItem("loggedin"));
-
   const [ isNavlinksShowing, setIsNavlinksShowing ] = useState(false);
   const [ isSearchShowing, setIsSearchShowing ] = useState(false);
   const [ searchTerm, setSearchTerm ] = useState('');
